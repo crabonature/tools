@@ -16,7 +16,7 @@
 # @year = 2013
 
 #Here comes output in Markdown
-@output_file = 'translation_status.md'
+@output_file = "translation_status#@year.md"
 @base_language = 'en'
 
 # Finds all news files for specified language.
