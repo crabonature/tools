@@ -8,16 +8,21 @@
 
 # You want to change this path
 @path_to_repo = "#{Dir.home}/arch_proj/open_source_contributions/www.ruby-lang.org"
+
 # You want to change this language
 @our_language = 'pl'
+
+# For specified year (without year it will generate for all news)
+# @year = 2013
+
 #Here comes output in Markdown
 @output_file = 'translation_status.md'
 @base_language = 'en'
 
 # Finds all news files for specified language.
 def find_news_files(language)
-  path = Dir.chdir("#@path_to_repo/#{language}/news/_posts")
-  Dir.glob(File.join("**", "*.md")).sort.reverse!
+  Dir.chdir("#@path_to_repo/#{language}/news/_posts")
+  Dir.glob(File.join("**", "#@year*.md")).sort.reverse!
 end
 
 # Resolves title of original news
