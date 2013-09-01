@@ -36,13 +36,12 @@ File.open("#@output_file", mode="w") do |opened_file|
   our_language_files = find_news_files(@our_language)
 
   find_news_files(@base_language).each do |file|
-    title = resolve_original_news_title(file)
     if our_language_files.include?(file)
       opened_file << "- [x] **"
     else
       opened_file << "- [ ] **"
     end
-    opened_file << title << "** - #{file}\n"
+    opened_file << resolve_original_news_title(file) << "** - #{file}\n"
   end
 end
 
